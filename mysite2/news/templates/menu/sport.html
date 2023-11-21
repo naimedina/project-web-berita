@@ -1,0 +1,230 @@
+{% extends 'core/base.html' %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}lifestyle{% endblock %}</title>
+    {% block htmlhead %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" />
+    {% endblock htmlhead %}
+  </head>
+  <body>
+    {% block content %}
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="data:image/jpeg;base64,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"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div
+          style="
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          "
+        >
+          <h1
+            style="
+              color: rgb(0, 0, 0);
+              font-size: 340%;
+              text-shadow: 3px 2px 1px grey;
+            "
+          >
+            Samuel
+          </h1>
+          <button type="button" class="btn btn-success">click here</button>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/n6d92107d62/bandung/"
+      data-label_1="BANDUNG"
+      data-label_2="WEATHER"
+      data-theme="metallic"
+      >BANDUNG WEATHER</a
+    >
+    <br /><br /><br />
+    <h1>New Article</h1>
+    <br /><br />
+    <div class="container text-center">
+      <div class="row">
+        {% for Berita in beritas %}
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img src="{{Berita.gambar.url}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h6 style="color: black">{{Berita.kategori}}</h6>
+              <h5 style="color: red; margin-top: 20px">{{Berita.judul}}</h5>
+              <h4 class="card-text" style="margin-top: 20px">
+                {{Berita.deskripsi}}
+              </h4>
+              <p class="card-text">{{Berita.isi}}</p>
+              <p
+                style="
+                  font-size: small;
+                  color: rgba(134, 134, 134, 134);
+                  text-align: left;
+                  margin-top: 30px;
+                "
+              >
+                {{Berita.penulis}}, {{Berita.publikasi}}
+              </p>
+              <button type="button" class="btn btn-primary">
+                <a href="{% url 'news:isi' Berita.id %}">go to site</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">
+              Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to
+              help the upcoming programmers with the code. Scanfcode focuses on
+              providing the most efficient code or snippets as the code wants to
+              be simple. We will help programmers build up concepts in different
+              programming languages that include C, C++, Java, HTML, CSS,
+              Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.
+            </p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li>
+                <a href="http://scanfcode.com/category/front-end-development/"
+                  >UI Design</a
+                >
+              </li>
+              <li>
+                <a href="http://scanfcode.com/category/back-end-development/"
+                  >PHP</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://scanfcode.com/category/java-programming-language/"
+                  >Java</a
+                >
+              </li>
+              <li>
+                <a href="http://scanfcode.com/category/android/">Android</a>
+              </li>
+              <li>
+                <a href="http://scanfcode.com/category/templates/">Templates</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li>
+                <a href="http://scanfcode.com/contribute-at-scanfcode/"
+                  >Contribute</a
+                >
+              </li>
+              <li>
+                <a href="http://scanfcode.com/privacy-policy/"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+              Copyright &copy; 2017 All Rights Reserved by
+              <a href="#">Scanfcode</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% endblock %}
+  </body>
+</html>

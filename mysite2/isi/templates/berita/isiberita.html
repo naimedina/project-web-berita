@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Edunews - Trending{% endblock %}</title>
+    {% block htmlhead %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" />
+    {% endblock htmlhead %}
+  </head>
+  <body>
+    {% block content %}
+    <h1>ARGANTARA</h1>
+    <br /><br /><br />
+
+    <div class="card" style="width: 100rem">
+      <img
+        src="https://kwikku.us/uploads/public/images/article/header/1-613474975289-20221231230010.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <br /><br /><br />
+      <div class="card-body">
+        <h5 class="card-title">FALISTIYANA</h5>
+        <br /><br /><br />
+        <p class="card-text">
+          Argantara berkisah tentang kehidupan Syera (Natasha Wilona), seorang
+          siswi SMA berusia 16 tahun. Kehidupannya mendadak berubah ketika ia
+          menikah muda dengan teman sekolahnya, Argantara (Aliando Syarief).
+          Argantara merupakan laki-laki bandel yang sosoknya dibenci oleh Syera.
+          Terlebih, Argantara juga merupakan ketua geng Agberos. Sikap Syera dan
+          Argantara sangat bertolak belakang sehingga membuat rumah tangga
+          mereka selalu dipenuhi pertengkaran dan ketegangan.Ditambah, Arga jadi
+          jarang pulang karena teman segengnya terbunuh ketika tawuran
+          besar-besaran dengan geng lain bernama Baron. Nah, pernikahan Syera
+          dan Arga dirahasiakan dari sekolah. Jadi, tidak ada satu pun teman dan
+          guru yang tahu bahwa keduanya telah menikah. Mereka pun harus
+          berhati-hati dalam bersikap agar rahasia ini tidak terbongkar. Jika
+          terbongkar, keduanya harus keluar dari sekolah. Namun, tanpa diduga,
+          Syera hamil! Ia pun harus menyembunyikan perutnya yang semakin
+          memebesar.Lantas, sampai kapan, ya, kira-kira Syera bisa
+          menyembuntikan perutnya yang semakin membesar?
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ALIANDO</li>
+        <li class="list-group-item">NATASHA WILONA</li>
+        <li class="list-group-item">Guntur Soeharjanto</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

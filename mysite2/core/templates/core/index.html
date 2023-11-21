@@ -1,0 +1,344 @@
+{% extends 'core/base.html' %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}welcome page{% endblock%}</title>
+    {% block htmlhead %} 
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    {% endblock htmlhead %}
+
+  </head>
+  <body>
+    {% block content %}
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://assets.ayobandung.com/crop/0x0:0x0/750x500/webp/photo/2023/02/08/1250828424.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://cdn.idntimes.com/content-images/post/20230321/snapinstaapp-1080-335657173-627786829188075-8587608494525508361-n-7e4665f588384137c47f2522b5bd61c7_600x400.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2022/12/01/201617108.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/n6d92107d62/bandung/"
+      data-label_1="BANDUNG"
+      data-label_2="WEATHER"
+      data-theme="gray"
+      >BANDUNG WEATHER</a
+    >
+
+    <br /><br /><br />
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt=""
+          />
+        </div>
+        <div class="col">
+          Kota Bandung tidak berdiri bersamaan dengan pembentukan Kabupaten
+          Bandung. Kota itu dibangun dengan tenggang waktu sangat jauh setelah
+          Kabupaten Bandung berdiri. Kabupaten Bandung dibentuk pada sekitar
+          pertengahan abad ke-17 masehi, dengan Bupati pertama yang bernama
+          Tumenggung Wirangunangun. Ia memerintah Kabupaten Bandung beribukota
+          di Krapyak (saat ini dikenal Dayeuhkolot), kira-kira 11 kilometer ke
+          arah selatan dari pusat kota Bandung sekarang. Ketika Kabupaten
+          Bandung dipimpin oleh Bupati ke-6 yaitu R.A. Wiranatakusumah II
+          (periode 1794-1829) yang dijuluki "dalem kaum", kekuasaan di nusantara
+          beralih dari kompeni kepada pemerintah Hindia Belanda, dengan Gubernur
+          Jenderal pertama yang bernama Herman Willem Daendels. Untuk kelancaran
+          menjalankan tugasnya di pulau jawa, Daendels membangun jalan raya pos
+          (groote poshweg) dari anyer di ujung jawa barat ke panarukan di ujung
+          jawa timur (± 1000 kilometer). Pembangunan jalan raya itu dilakukan
+          oleh rakyat pribumi di bawah pimpinan bupati daerah masing-masing.
+        </div><BR><BR><BR><BR><BR><BR><BR>
+        
+        <h1>UPDATE NEWS TODAY</h1>
+        <BR><BR><BR>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <img
+                src="https://asset.kompas.com/crops/v3d9kve-Q8JmQxzmj_K-uhpoT2k=/0x0:804x536/750x500/data/photo/2022/09/12/631ec03a7fdf0.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h5 class="card-title">Lee Je-no</h5>
+              <p class="card-text">
+                Lee Je-no, known professionally as Jeno, is a South Korean
+                rapper, singer, and dancer. Lee began his career as a child
+                commercials model. He was discovered by SM Entertainment at the
+                age of thirteen. Lee officially debuted in August 2016 as a
+                member of South Korean boy band NCT through the sub-unit NCT
+                Dream
+              </p>
+              <a href="#" class="btn btn-primary">SUAMI DHEA</a> <br><br><br>
+            </div>
+            <div class="col">
+              <img
+                src="https://akcdn.detik.net.id/community/media/visual/2018/11/06/868b2874-f3fe-4a37-9eb8-80acbee4d99e_43.jpeg?w=250&q="
+                class="card-img-top"
+                alt="..."
+              />
+              <h5 class="card-title">Lee Jong Suk</h5>
+              <p class="card-text">
+                Lee Jong Suk adalah aktor dan model asal Korea Selatan. Dia
+                memulai debutnya pada tahun 2005 dengan film pendek Sympathy. Ia
+                lebih dikenal berkat perannya di drama School 2013
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <br /><br /><br />
+          </div>
+          <div class="row">
+            <div class="col">
+              <img
+                src="https://thumb.viva.co.id/media/frontend/thumbs3/2021/05/04/60912ecda1f50-song-joong-ki_1265_711.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h5 class="card-title">Song Joong-ki</h5>
+              <p class="card-text">
+                Song Joong-ki is a South Korean actor. He rose to fame in the
+                historical coming-of-age drama Sungkyunkwan Scandal and the
+                variety show Running Man as one of the original cast members.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="col">
+              <img
+                src="https://www.blibli.com/friends-backend/wp-content/uploads/2023/09/B900312-Cover-makanan-kesukaan-jisung-nct-1536x806.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <h5 class="card-title">Park Ji-sung</h5>
+              <p class="card-text">
+                Park Ji-sung, atau Jisung, adalah seorang penyanyi Korea Selatan
+                yang berada di bawah naungan SM Entertainment. Ia adalah anggota
+                grup vokal laki-laki NCT dan sub-unit NCT Dream. Posisinya di
+                NCT Dream adalah sebagai penari utama dan anggota termuda
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> <br><br><br>
+
+                <div class="col">
+                  <img
+                    src="data:image/jpeg;base64,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"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <h5 class="card-title">Jeong Yun-o</h5>
+                  <p class="card-text">
+                    Jeong Yun-o, professionally known as Jaehyun, is a South
+                    Korean singer, rapper, songwriter, and actor. He is a member
+                    of the South Korean boy band NCT and its sub-units NCT 127
+                    and NCT DoJaeJung. Jaehyun is recognized as one of NCT's
+                    all-rounders for his unique baritone vocals and skills in
+                    rapping and dancing.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <BR><BR><BR>
+    <h4>NEW PHOTO</h4>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="https://cdn0-production-images-kly.akamaized.net/GosQsQ0peMY6Qfwkbif5Po1xsnc=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/1373124/original/070784300_1476359893-Malay_Mail_Online.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sutradara: Muhammad Usamah Zaid Yasin, Adam Amiruddin
+                Pembuat: Ainon binti Ariff, Burhanuddin Radzi</h5>
+              <p class="card-text">Upin & Ipin adalah sebuah serial televisi animasi kartun anak-anak Malaysia yang dirilis pada tanggal 14 September 2007 yang ditayangkan di TV9, RTM2, MNCTV dan Kids TV. Serial ini yang diproduksi oleh Les' Copaque Production. </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="https://m.media-amazon.com/images/M/MV5BY2JhNmE0M2ItY2I5NC00MTJjLTk2ZjItZTI1YTgwMzVjMTMzXkEyXkFqcGdeQXVyNzY4NDQzNTg@._V1_.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Falistiyana </h5>
+              <p class="card-text">Kehidupan SYERA, seorang siswi SMA berusia 16 tahun mendadak berubah ketika ia menikah muda dengan ARGANTARA, seorang cowok bandel yang dibencinya di sekolah dan juga ketua geng Agberos. Sifat dan sikap keduanya yang bertolak belakang membuat rumah tangga mereka penuh pertengkaran.</p>
+              <button type="button" class="btn btn-danger btn-sm" onclick="location.href='isiberita'">Click Here</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="https://upload.wikimedia.org/wikipedia/id/5/56/Poster_My_Nerd_Girl.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Aidah Harisah </h5>
+              <p class="card-text">Diangkat dari kisah Wattpad karya Aidah Harisah, My Nerd Girl mengisahkan tentang Fara dan Rea, seorang kakak-adik kembar yang memiliki sifat yang berbeda. Fara, seorang yang culun dan pendiam tiba-tiba ditemukan meninggal dunia akibat bunuh diri.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+         <a href="#">Scanfcode</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+</footer>
+
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    {% endblock%}
+  </body>
+</html>
